@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    {# ▼▼▼ HEAD（共通） ▼▼▼ #}
+    {% include '../components/head.njk' %}
+    {# ▲▲▲ HEAD（共通） ▲▲▲ #}
+
+    {# ▼▼▼ HEAD（ページ専用） ▼▼▼ #}
+    {% block PAGE_HEAD %}{% endblock %}
+    {# ▲▲▲ HEAD（ページ専用） ▲▲▲ #}
+  </head>
+  <body>
+    {# ▼▼▼ ヘッダー ▼▼▼ #}
+    {% include '../components/header.njk' %}
+    {# ▲▲▲ ヘッダー ▲▲▲ #}
+
+    <main>
+      {# ▼▼▼ ページ内容 ▼▼▼ #}
+      {% block PAGE_CONTENT %}{% endblock %}
+      {# ▲▲▲ ページ内容 ▲▲▲ #}
+    </main>
+
+    {# ▼▼▼ フッター ▼▼▼ #}
+    {% include '../components/footer.njk' %}
+    {# ▲▲▲ フッター ▲▲▲ #}
+
+    {# ▼▼▼ 固定要素 ▼▼▼ #}
+    {% block FIX_CONTENT %}{% endblock %}
+    {# ▲▲▲ 固定要素 ▲▲▲ #}
+
+    {# ▼▼▼ FOOT（共通） ▼▼▼ #}
+    {% include '../components/foot.njk' %}
+    {# ▲▲▲ FOOT（共通） ▲▲▲ #}
+
+    {# ▼▼▼ FOOT（ページ専用） ▼▼▼ #}
+    {% block PAGE_FOOT %}{% endblock %}
+    {# ▲▲▲ FOOT（ページ専用） ▲▲▲ #}
+  </body>
+</html>

@@ -1,0 +1,30 @@
+{%
+  set page = {
+    title: title
+  }
+%}
+<!doctype html>
+<html lang="ja">
+  <head>
+    {# ▼▼▼ HEAD（共通） ▼▼▼ #}
+    {% include '../components/head.njk' %}
+    {# ▲▲▲ HEAD（共通） ▲▲▲ #}
+  </head>
+  <body>
+    {# ▼▼▼ ヘッダー ▼▼▼ #}
+    {% include '../components/header.njk' %}
+    {# ▲▲▲ ヘッダー ▲▲▲ #}
+
+    <main>
+      {{ content | safe }}
+    </main>
+
+    {# ▼▼▼ フッター ▼▼▼ #}
+    {% include '../components/footer.njk' %}
+    {# ▲▲▲ フッター ▲▲▲ #}
+
+    {# ▼▼▼ FOOT（共通） ▼▼▼ #}
+    {% include '../components/foot.njk' %}
+    {# ▲▲▲ FOOT（共通） ▲▲▲ #}
+  </body>
+</html>

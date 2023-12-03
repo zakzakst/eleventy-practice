@@ -1,0 +1,45 @@
+{% extends 'layouts/default.njk' %}
+{% from 'components/breadcrumb.njk' import default as BREADCRUMB %}
+{% from 'components/modal.njk' import default as MODAL %}
+{%
+set page = {
+  title: 'HOME',
+  nav: 'home',
+  breadcrumb_items: [
+    {
+      LINK: '/',
+      LABEL: 'トップ'
+    },
+    {
+      LINK: '/parts.html',
+      LABEL: 'パーツ集'
+    }
+  ]
+}
+%}
+
+{% block PAGE_HEAD %}
+  <!-- ▼▼▼ 読み込みファイル（ページ専用） ▼▼▼ -->
+  <link rel="stylesheet" href="/{{ site.root }}css/sample.css">
+  <!-- ▲▲▲ 読み込みファイル（ページ専用） ▲▲▲ -->
+{% endblock %}
+
+{% block PAGE_CONTENT %}
+  <!-- ▼▼▼ ページ内容 ▼▼▼ -->
+  {{ BREADCRUMB(page.breadcrumb_items) }}
+  <!-- ▲▲▲ ページ内容 ▲▲▲ -->
+{% endblock %}
+
+{% block FIX_CONTENT %}
+  <!-- ▼▼▼ 固定要素（モーダルなど） ▼▼▼ -->
+  {% call MODAL('modal') %}
+    <p>モーダル</p>
+  {% endcall %}
+  <!-- ▲▲▲ 固定要素（モーダルなど） ▲▲▲ -->
+{% endblock %}
+
+{% block PAGE_FOOT %}
+  <!-- ▼▼▼ 読み込みファイル（ページ専用） ▼▼▼ -->
+  <script src="/{{ site.root }}js/sample.js"></script>
+  <!-- ▲▲▲ 読み込みファイル（ページ専用） ▲▲▲ -->
+{% endblock %}
