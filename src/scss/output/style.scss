@@ -1,0 +1,9 @@
+@use "../foundation";
+
+p {
+  color: #f00;
+  + p {
+    color: #000;
+    width: 100%;
+  }
+}

@@ -7,10 +7,15 @@
   "license": "MIT",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
-    "js-beautify": "^1.14.11"
+    "js-beautify": "^1.14.11",
+    "sass": "^1.69.5"
   },
   "scripts": {
-    "build": "eleventy && js-beautify ./dist/**/*.html -m 0 -s 2",
-    "serve": "eleventy --serve"
+    "build": "eleventy && js-beautify ./dist/**/*.html -m 0 -s 2 && sass ./src/scss/output/:./dist/css/ --no-source-map",
+    "serve": "eleventy --serve",
+    "sass": "sass ./src/scss/output/:./dist/css/ --no-source-map --watch"
+  },
+  "dependencies": {
+    "reset-css": "^5.0.2"
   }
 }
