@@ -8,14 +8,18 @@
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "js-beautify": "^1.14.11",
+    "npm-run-all": "^4.1.5",
     "sass": "^1.69.5",
     "vite": "^5.0.4"
   },
   "scripts": {
-    "build": "eleventy && js-beautify ./dist/**/*.html -m 0 -s 2 && sass ./src/scss/output/:./dist/css/ --no-source-map",
-    "serve": "eleventy --serve",
-    "sass": "sass ./src/scss/output/:./dist/css/ --no-source-map --watch",
-    "js": "vite build --watch"
+    "dev:html": "eleventy --serve",
+    "dev:css": "sass ./src/scss/output/:./dist/css/ --no-source-map --watch",
+    "dev:js": "vite build --watch",
+    "build": "run-p \"build:*\"",
+    "build:html": "eleventy && js-beautify ./dist/**/*.html -m 0 -s 2",
+    "build:css": "sass ./src/scss/output/:./dist/css/ --no-source-map",
+    "build:js": "vite build"
   },
   "dependencies": {
     "reset-css": "^5.0.2"
