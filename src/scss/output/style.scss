@@ -1,9 +1,14 @@
-@use "../foundation";
+@use "../global" as g;
+// @use "../foundation";
 
 p {
   color: #000;
   + p {
     color: #000;
     width: 100%;
+    @include g.container();
+    @include g.Mq(sm) {
+      color: #f00;
+    }
   }
 }
