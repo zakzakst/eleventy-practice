@@ -1,5 +1,7 @@
+require("dotenv").config();
 const fetch = require("node-fetch");
-const apiUrl = "https://jsonplaceholder.typicode.com/users";
+const apiUrl = process.env.API_URL;
+console.log(process.env.NODE_ENV);
 
 module.exports = async () => {
   let responseData;
