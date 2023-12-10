@@ -13,5 +13,10 @@
     <li>{{ user.id }} | {{ user.name }} | {{ user.email }}</li>
     {%- endfor %}
   </ul>
+  <ul>
+    {% for post in wp_posts %}
+    <li>{{ post.id }} | {{ post.excerpt.rendered | safe }}</li>
+    {%- endfor %}
+  </ul>
   <!-- ▲▲▲ ページ内容 ▲▲▲ -->
 {% endblock %}
