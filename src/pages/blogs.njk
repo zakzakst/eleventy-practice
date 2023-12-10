@@ -1,0 +1,18 @@
+---
+pagination:
+  data: blogs
+  size: 1
+  alias: blog
+eleventyComputed:
+  page:
+    title: "{{ blog.title.rendered }}"
+permalink: "blogs/{{ blog.id }}.html"
+---
+
+{% extends 'layouts/default.njk' %}
+
+{% block PAGE_CONTENT %}
+  <!-- ▼▼▼ ページ内容 ▼▼▼ -->
+  <div>{{ blog.excerpt.rendered | safe }}</div>
+  <!-- ▲▲▲ ページ内容 ▲▲▲ -->
+{% endblock %}

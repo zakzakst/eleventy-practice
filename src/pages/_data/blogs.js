@@ -17,6 +17,7 @@ module.exports = async () => {
       },
     ];
   } finally {
+    console.log(responseData);
     return responseData;
   }
 };
