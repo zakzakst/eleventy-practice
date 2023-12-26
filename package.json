@@ -7,9 +7,12 @@
   "license": "MIT",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
+    "ansi-colors": "^4.1.3",
     "cross-env": "^7.0.3",
     "dotenv": "^16.3.1",
     "env-cmd": "^10.1.0",
+    "fancy-log": "^2.0.0",
+    "globule": "^1.3.4",
     "imagemin-gifsicle": "^7.0.0",
     "imagemin-keep-folder": "^5.3.2",
     "imagemin-mozjpeg": "^10.0.0",
@@ -19,6 +22,7 @@
     "node-fetch": "2",
     "npm-run-all": "^4.1.5",
     "sass": "^1.69.5",
+    "sharp": "^0.33.1",
     "vite": "^5.0.4"
   },
   "scripts": {
@@ -29,7 +33,8 @@
     "build:html": "cross-env NODE_ENV=development env-cmd -f .env.development eleventy && js-beautify ./dist/**/*.html -m 0 -s 2",
     "build:css": "sass ./src/scss/output/:./dist/css/ --no-source-map",
     "build:js": "vite build",
-    "image-min": "node --experimental-modules ./tasks/image-min.mjs"
+    "image-min": "node --experimental-modules ./tasks/image-min.mjs",
+    "image-convert": "node --experimental-modules ./tasks/image-convert.mjs"
   },
   "dependencies": {
     "reset-css": "^5.0.2"
